@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Math Utility Dashboard</title>
+</head>
+<body>
+  <h2>Math Utility Dashboard</h2>
+  <p id="output"></p>
+  <script>
+    let x = 16.75;
+    let rounded = Math.round(x);
+    let sqrt = Math.sqrt(x);
+    let power = Math.pow(x, 3);
+    let random = Math.floor(Math.random() * 41) + 10;
+    let result = `
+      Number: ${x}<br>
+      Rounded Value: ${rounded}<br>
+      Square Root: ${sqrt}<br>
+      Power (x³): ${power}<br>
+      Random Number (10–50): ${random}
+    `;
+    document.getElementById("output").innerHTML = result;
+  </script>
+</body>
+</html>

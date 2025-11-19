@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Performance Analyzer</title>
+</head>
+<body>
+  <h2>Array Performance Analyzer</h2>
+  <p id="output"></p>
+  <script>
+    let scores = Array.from({ length: 8 }, () => Math.floor(Math.random() * 71) + 30);
+    let highest = Math.max(...scores);
+    let lowest = Math.min(...scores);
+    let average = scores.reduce((a, b) => a + b, 0) / scores.length;
+    let passed = scores.filter(score => score >= 50).length;
+    let summary = `
+      Scores: ${scores.join(", ")}<br>
+      Highest Score: ${highest}<br>
+      Lowest Score: ${lowest}<br>
+      Average Score: ${average.toFixed(2)}<br>
+      Students Passed: ${passed}
+    `;
+    document.getElementById("output").innerHTML = summary;
+  </script>
+</body>
+</html>

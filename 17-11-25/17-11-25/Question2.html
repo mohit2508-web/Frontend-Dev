@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q2 – Employee Bonus Calculator</title>
+<style>
+  body { font-family: Arial; padding: 20px; background: #eef2ff; }
+  pre { background: #111; color: #6cff72; padding: 15px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Q2 – Employee Bonus Calculator</h1>
+<pre id="output"></pre>
+<script>
+"use strict";
+const employees = [
+  { name: "Amit", salary: "45000", years: "5" },
+  { name: "Sara", salary: "38000", years: "2" },
+  { name: "Kiran", salary: "52000", years: "7" }
+];
+let log = "";
+for (let emp of employees) {
+  try {
+    if (!emp.name || !emp.salary || !emp.years) {
+      throw new Error("Missing employee property");
+    }
+    const salary = Number(emp.salary);
+    const years = Number(emp.years);
+    if (isNaN(salary) || isNaN(years)) throw new Error("Invalid numeric conversion");
+    const bonus = years > 3 ? salary * 0.1 : salary * 0.05;
+    log += Employee: ${emp.name}\nSalary: ${salary}\nYears: ${years}\nBonus: ${bonus}\n---\n;
+  } 
+  catch (err) {
+    log += Error for ${emp.name}: ${err.message}\n;
+  }
+}
+document.getElementById("output").textContent = log;
+</script>
+</body>
+</html>

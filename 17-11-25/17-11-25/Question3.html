@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q3 – Transaction Validator</title>
+<style>
+  body { font-family: Arial; padding: 20px; background: #f0fff0; }
+  pre { background: #222; color: #9df; padding: 15px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Q3 – Transaction Validator</h1>
+<pre id="output"></pre>
+<script>
+"use strict";
+const transactions = [
+  { id: 1, amount: 2000 },
+  { id: 2, amount: -500 },
+  { id: 3 },
+  null
+];
+const valid = [];
+const invalid = [];
+let log = "";
+for (let trx of transactions) {
+  try {
+    if (trx === null) throw new Error("Null transaction");
+    if (!("id" in trx) || !("amount" in trx))
+      throw new Error("Missing id or amount");
+    if (trx.amount < 0) throw new Error("Negative amount");
+    valid.push(trx);
+  } 
+  catch (err) {
+    invalid.push({ trx, error: err.message });
+  }
+}
+log += "VALID:\n" + JSON.stringify(valid, null, 2) + "\n\n";
+log += "INVALID:\n" + JSON.stringify(invalid, null, 2) + "\n\n";
+log += Success: ${valid.length}\nFailure: ${invalid.length}\n;
+document.getElementById("output").textContent = log;
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q4 – Debugging Mystery</title>
+<style>
+  body { font-family: Arial; padding: 20px; background: #fff8e6; }
+  pre { background: #222; color: #ffcd75; padding: 15px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Q4 – Strict Mode Debugging</h1>
+<pre id="output"></pre>
+<script>
+"use strict";
+let log = "";
+function showMessage() {
+  let greeting = "Welcome";
+  debugger; // For VS Code debugging
+  log += greeting;
+}
+showMessage();
+document.getElementById("output").textContent = log;
+</script>
+</body>
+</html>

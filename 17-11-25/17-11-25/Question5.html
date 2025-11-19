@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q5 – Hoisting Lab</title>
+<style>
+  body { font-family: Arial; padding: 20px; background: #e9f7ff; }
+  pre { background: #111; color: #90e0ff; padding: 15px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Q5 – Hoisting Lab</h1>
+<pre id="output"></pre>
+<script>
+"use strict";
+let log = "";
+var score = 50;
+let status = "ready";
+log += score + "\n";
+function announce() { log += "Game started\n"; }
+function startGame() { log += status + "\n"; }
+announce();
+startGame();
+const announceArrow = () => log += "Game started (arrow)\n";
+const startGameArrow = () => log += status + " (arrow)\n";
+announceArrow();
+startGameArrow();
+document.getElementById("output").textContent = log;
+</script>
+</body>
+</html>

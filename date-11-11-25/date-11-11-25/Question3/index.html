@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let show = prompt("Enter show time (morning/evening)");
+    let age = +prompt("Enter age");
+    let tickets = +prompt("Enter number of tickets");
+
+    let price = 0;
+
+    if(show == "morning"){
+        price = 120;
+    }
+    if(show == "evening"){
+        price = 180;
+    }
+
+    let base = price * tickets;
+
+    let discount = 0;
+
+    if(age <= 25){
+        discount = base * 0.10;
+    }
+    if(age > 60){
+        discount = base * 0.20;
+    }
+
+    let discountedTotal = base - discount;
+
+    let finalAmount = discountedTotal;
+
+    if(tickets > 3){
+        finalAmount = finalAmount + 50;
+    }
+
+    console.log("Base Price = " + base);
+    console.log("Discounted Total = " + discountedTotal);
+    console.log("Final Amount = " + finalAmount);
+</script>
+</html>

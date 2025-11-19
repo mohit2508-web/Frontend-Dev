@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let orderamount=+prompt("Enter the order amount");
+    let premium=prompt("Is the customer a premium");
+    let remote=prompt("remote aur not");
+    if(premium=="no"&&remote=="no"&&orderamount<500){
+        console.log("Delivery charge is 50 rupees and delivered in 3 days");
+    }
+    if(premium=="yes"&&remote=="no"){
+        console.log("no delivary charge and delivered in 3 days")
+    }
+    if(remote=="yes"){
+        console.log("delivered in 5 days");
+    }
+    if(orderamount>=500){
+        console.log("It delivered free");
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Interest</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let accountType = prompt("Enter account type (savings/fd)");
+    let amount = +prompt("Enter amount");
+    let years = +prompt("Enter years");
+
+    let rate = 0;
+
+    if(accountType == "savings"){
+        rate = 4;
+    }
+    if(accountType == "fd"){
+        rate = 6.5;
+    }
+    if(amount > 100000){
+        rate = rate + 1;
+    }
+
+    let total = amount * Math.pow((1 + rate/100), years);
+    console.log(total.toFixed(2));
+</script>
+</html>

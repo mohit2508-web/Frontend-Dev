@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Analyzer</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let marks = [];
+    for(let i=0;i<5;i++){
+        marks.push(+prompt("Enter mark " + (i+1)));
+    }
+
+    let sum = 0;
+    for(let i=0;i<5;i++){
+        sum = sum + marks[i];
+    }
+
+    let avg = sum / 5;
+    let percentage = avg;
+
+    let fails = 0;
+    for(let i=0;i<5;i++){
+        if(marks[i] < 40){
+            fails++;
+        }
+    }
+
+    let grade = "";
+
+    if(percentage >= 90){
+        grade = "A+";
+    }
+    else if(percentage >= 75){
+        grade = "A";
+    }
+    else if(percentage >= 60){
+        grade = "B";
+    }
+    else if(percentage >= 40){
+        grade = "C";
+    }
+    else{
+        grade = "Fail";
+    }
+
+    if(fails >= 2){
+        console.log("Repeat Year");
+    }
+
+    console.log("Average = " + avg);
+    console.log("Percentage = " + percentage);
+    console.log("Grade = " + grade);
+</script>
+</html>
